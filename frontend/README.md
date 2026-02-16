@@ -1,8 +1,12 @@
 # NutriStar Frontend
+http://localhost:5000/api  backend
+
+http://localhost:5173 frontend
 
 Modern React + Vite ecommerce frontend for NutriStar nutritional supplements store.
 
 ## Prerequisites
+
 
 - Node.js 16+ 
 - npm or yarn package manager

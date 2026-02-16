@@ -32,11 +32,23 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 // app.use("/uploads", express.static(path.join(process.cwd(), "uploads")))
 
   
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://supplementwala.vercel.app",
+]
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true)
+      } else {
+        callback(new Error("CORS not allowed"))
+      }
+    },
     credentials: true,
-  }),
+  })
 )
 app.use(express.json())
 
@@ -47,6 +59,8 @@ connectDB()
 app.get("/api/health", (req, res) => {
   res.json({ status: "Server is running" })
 })
+
+app.options("*", cors())
 
 app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)

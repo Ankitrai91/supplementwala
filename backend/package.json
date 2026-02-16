@@ -1,12 +1,10 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
-  "private": true,
+  "name": "supplementwala-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint ."
+    "start": "node server.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

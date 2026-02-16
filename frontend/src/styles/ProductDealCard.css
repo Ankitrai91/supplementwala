@@ -1,0 +1,20 @@
+.add-btn {
+  background: #0f9d58;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.choose-btn {
+  background: black;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.add-btn:hover,
+.choose-btn:hover {
+  opacity: 0.9;
+}

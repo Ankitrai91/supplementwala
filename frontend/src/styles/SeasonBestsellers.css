@@ -1,0 +1,82 @@
+.season-carousel {
+  display: flex;
+  gap: 16px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 10px 4px 20px;
+}
+
+/* Hide scrollbar */
+.season-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.season-carousel {
+  scrollbar-width: none;
+}
+
+/* Card wrapper */
+.season-carousel > * {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.season-carousel .product-card {
+  width: 220px;
+}
+
+@media (max-width: 768px) {
+  .season-carousel .product-card {
+    width: 202px;
+  }
+  .season-tabs{
+    gap: 0px !important;
+    padding-bottom: 6px;
+
+  }
+}
+
+.product-card {
+  min-height: 360px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    min-height: 320px;
+  }
+}
+
+
+.season-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.season-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.season-tab {
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #f3f3f3;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.season-tab.active {
+  background: #111;
+  color: white;
+}
+.season-carousel {
+  scroll-behavior: smooth;
+}

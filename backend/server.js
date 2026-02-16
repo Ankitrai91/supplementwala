@@ -60,7 +60,7 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "Server is running" })
 })
 
-app.options("*", cors())
+// app.options("*", cors())
 
 app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)
